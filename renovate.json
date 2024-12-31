@@ -2,7 +2,7 @@
   "baseBranches": [
     "refactoring"
   ],
-  "enabledManagers": ["gradle","docker-compose","dockerfile"],
+  "enabledManagers": ["gradle","docker-compose","github-actions"],
   "extends": [
     "github>goafabric/renovate-bot"
   ]
