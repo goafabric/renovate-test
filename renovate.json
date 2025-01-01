@@ -5,5 +5,26 @@
   "enabledManagers": ["gradle","docker-compose","github-actions"],
   "extends": [
     "github>goafabric/renovate-bot"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "all-updates"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "github-updates"
+    }
   ]
 }
