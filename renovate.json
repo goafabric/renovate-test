@@ -15,18 +15,6 @@
       "automerge": true,
       "automergeType": "branch",
       "groupName": "all-updates"
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": [
-        "major",
-        "minor",
-        "patch"
-      ],
-      "automerge": true,
-      "automergeType": "branch",
-      "groupName": "github-updates",
-      "enabled": true
     }
   ]
 }
