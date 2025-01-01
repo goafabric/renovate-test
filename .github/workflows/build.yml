@@ -20,7 +20,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: 8.12
+          gradle-version: 8.11
 
       - name: Test
         run: gradle build test
@@ -35,28 +35,3 @@ jobs:
           name: SBOM
           path: build/resources/main/META-INF/sbom/application.cdx.json
 
-  snapshot:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-      
-      - uses: actions/checkout@v4
-
-      - name: Set up JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: 8.12
-          
-      - name: Container Images
-        run: gradle test #jib dockerImageNative
