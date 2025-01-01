@@ -24,7 +24,8 @@
       ],
       "automerge": true,
       "automergeType": "branch",
-      "groupName": "github-updates"
+      "groupName": "github-updates",
+      "enabled": true
     }
   ]
 }
