@@ -8,9 +8,7 @@
   ],
   "dependencyDashboard": false,
   "enabledManagers": ["gradle","github-actions","dockerfile"],
-  "dockerfile": {
-    "managerFilePatterns": ["build.gradle.kts"]
-  },
+
 
   "packageRules": [
     {
@@ -23,6 +21,16 @@
       "automerge": true,
       "automergeType": "branch",
       "groupName": "docker-updates"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["build.gradle.kts"],
+      "matchStrings": [
+        "^(?<depName>[^:]+?):(?<currentValue>[^@\\s]+)"
+      ],
+      "datasourceTemplate": "docker"
     }
   ]
 }
