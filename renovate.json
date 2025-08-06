@@ -28,7 +28,7 @@
       "customType": "regex",
       "managerFilePatterns": ["build.gradle.kts"],
       "matchStrings": [
-        "^(?<depName>[^:]+?):(?<currentValue>[^@\\s]+)"
+        "^FROM\\s+(?<depName>\\S+):(?<currentValue>\\S+)"
       ],
       "datasourceTemplate": "docker"
     }
