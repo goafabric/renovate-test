@@ -8,13 +8,15 @@
   ],
   "dependencyDashboard": false,
   "enabledManagers": ["gradle","github-actions","dockerfile"],
+
+  "dockerfile": {
+    "managerFilePatterns": ["mydockerfile"]
+  },
   "packageRules": [
     {
       "matchManagers": "dockerfile",
       "matchDatasources": ["docker"],
       "matchPackageNames": ["ibm-semeru-runtimes"],
-
-      "fileMatch": ["(^|/)mydockerfile$"],
 
       "versioning": "regex:^open-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:\\.(?<patch2>\\d+))?_\\d+-jre$",
 
