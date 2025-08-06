@@ -9,9 +9,6 @@
   "dependencyDashboard": false,
   "enabledManagers": ["gradle","github-actions","dockerfile"],
 
-  "dockerfile": {
-    "managerFilePatterns": ["mydockerfile"]
-  },
   "packageRules": [
     {
       "matchManagers": "dockerfile",
