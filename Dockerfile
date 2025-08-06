@@ -1,1 +1,1 @@
-FROM ibm-semeru-runtimes:open-21.0.4.1_7-jre@sha256:8b94f8b14fd1d4660f9dc777b1ad3630f847b8e3dc371203bcb857a5e74d6c39
+FROM ibm-semeru-runtimes:open-21.0.4.1_7-jre@sha256:4df45d883ba518104e9d1975d49e64768f27b5db25c731b11e86f9b5a497695f
