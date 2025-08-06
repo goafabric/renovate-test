@@ -9,7 +9,7 @@
   "dependencyDashboard": false,
   "enabledManagers": ["gradle","github-actions","dockerfile"],
   "dockerfile": {
-    "managerFilePatterns": ["mydockerfile"]
+    "managerFilePatterns": ["build.gradle.kts"]
   },
 
   "packageRules": [
