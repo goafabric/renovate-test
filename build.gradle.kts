@@ -3,5 +3,5 @@ FROM ibm-semeru-runtimes:open-21.0.4.1_7-jre@sha256:8b94f8b14fd1d4660f9dc777b1ad
 //val baseImage: String = file("Dockerfile").readText().removePrefix("FROM").trim()
 
 plugins {
-    id("org.springframework.boot") version "3.5.0"
+    id("org.springframework.boot") version "3.5.4"
 }
