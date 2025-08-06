@@ -8,33 +8,21 @@
   ],
   "dependencyDashboard": false,
   "enabledManagers": ["gradle","github-actions","dockerfile"],
+  "dockerfile": {
+    "managerFilePatterns": ["build.gradle.kts"]
+  },
 
-
-  "customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": ["^build\\.gradle\\.kts$"],
-      "matchStrings": [
-        "val baseImage\\s*=\\s*\"(?<datasource>docker):(?<depName>ibm-semeru-runtimes):(?<currentValue>open-[^@]+)@sha256:[a-f0-9]{64}\""
-      ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "regex:^open-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:\\.(?<patch2>\\d+))?_\\d+-jre$"
-    }
-  ],
   "packageRules": [
     {
-      "matchManagers": ["custom"],
+      "matchManagers": "dockerfile",
       "matchDatasources": ["docker"],
       "matchPackageNames": ["ibm-semeru-runtimes"],
+
+      "versioning": "regex:^open-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:\\.(?<patch2>\\d+))?_\\d+-jre$",
+
       "automerge": true,
       "automergeType": "branch",
-      "groupName": "docker-image-updates"
+      "groupName": "docker-updates"
     }
-  ],
-  "pinDigests": true
-
-
+  ]
 }
-
-
-
